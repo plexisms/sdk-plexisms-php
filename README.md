@@ -1,7 +1,7 @@
 # PlexiSMS
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/plexisms/plexisms-php.svg?style=flat-square)](https://packagist.org/packages/plexisms/plexisms-php)
-[![Total Downloads](https://img.shields.io/packagist/dt/plexisms/plexisms-php.svg?style=flat-square)](https://packagist.org/packages/plexisms/plexisms-php)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/plexisms/plexisms.svg?style=flat-square)](https://packagist.org/packages/plexisms/plexisms)
+[![Total Downloads](https://img.shields.io/packagist/dt/plexisms/plexisms.svg?style=flat-square)](https://packagist.org/packages/plexisms/plexisms)
 
 Official PHP library for the [PlexiSMS API](https://plexisms.com).
 
@@ -15,7 +15,7 @@ Official PHP library for the [PlexiSMS API](https://plexisms.com).
 Install the package via Composer:
 
 ```bash
-composer require plexisms/plexisms-php
+composer require plexisms/plexisms
 ```
 
 ## Getting Started
@@ -39,7 +39,7 @@ $client = new Client('YOUR_API_KEY');
 ```php
 try {
     $response = $client->messages->create([
-        'to' => '+243970000000',
+        'to' => '+243970000000', // Change
         'body' => 'Hello from PlexiSMS!',
         'senderId' => 'PlexiSMS' // Optional
     ]);

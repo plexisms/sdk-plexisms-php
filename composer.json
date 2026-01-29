@@ -1,6 +1,12 @@
 {
     "name": "plexisms/plexisms",
     "description": "Official PHP SDK for PlexiSMS API",
+    "keywords": [
+        "sms",
+        "api",
+        "sdk",
+        "plexisms"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
