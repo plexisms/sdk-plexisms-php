@@ -1,0 +1,25 @@
+{
+    "name": "plexisms/plexisms",
+    "description": "Official PHP SDK for PlexiSMS API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PlexiSMS",
+            "email": "dev@plexisms.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Plexisms\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
