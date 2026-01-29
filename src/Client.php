@@ -4,12 +4,16 @@ namespace Plexisms;
 
 use GuzzleHttp\Client as GuzzleClient;
 use Plexisms\Resources\Messages;
+use Plexisms\Resources\OTP;
+use Plexisms\Resources\Account;
 
 class Client
 {
     private $apiKey;
     private $httpClient;
     public $messages;
+    public $otp;
+    public $account;
 
     /**
      * Create a new PlexiSMS Client instance.
@@ -21,7 +25,7 @@ class Client
     {
         $this->apiKey = $apiKey;
 
-        $baseUri = 'https://server.plexisms.com';
+        $baseUri = 'https://server.plexisms.com/';
 
         $config = array_merge([
             'base_uri' => $baseUri,
@@ -37,5 +41,7 @@ class Client
 
         // Initialize Resources
         $this->messages = new Messages($this->httpClient);
+        $this->otp = new \Plexisms\Resources\OTP($this->httpClient);
+        $this->account = new \Plexisms\Resources\Account($this->httpClient);
     }
 }

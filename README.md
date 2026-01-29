@@ -5,6 +5,8 @@
 
 Official PHP library for the [PlexiSMS API](https://plexisms.com).
 
+
+
 ## Requirements
 
 - PHP 7.4 or higher
@@ -29,7 +31,7 @@ You can get your API key from the [PlexiSMS dashboard](https://app.plexisms.com)
 ```php
 require 'vendor/autoload.php';
 
-use Plexisms\\Client;
+use Plexisms\Client;
 
 $client = new Client('YOUR_API_KEY');
 ```
@@ -53,6 +55,35 @@ try {
 ```
 
 > **Note:** The `senderId` is optional. If not provided, the default sender ID will be used. You can customize your sender ID from the [PlexiSMS dashboard](https://app.plexisms.com).
+
+### Sending Bulk SMS
+
+```php
+$response = $client->messages->createBulk(
+    ['+243970000000', '+243970000001'],
+    'Bulk message test!',
+    'PlexiSMS'
+);
+```
+
+### Sending OTP
+
+```php
+// Send OTP
+$otp = $client->otp->send('+243970000000');
+$verificationId = $otp['verification_id'];
+
+// Verify OTP
+$verification = $client->otp->verify($verificationId, '123456');
+```
+
+### Checking Balance
+
+```php
+$balance = $client->account->balance();
+print_r($balance);
+```
+
 
 ## License
 
